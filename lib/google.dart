@@ -39,7 +39,7 @@ void getInfo() {
         " photo url: " +
         photoUrl.toString() +
         " uid: " +
-        uid.toString());
+        uid.toString()+"nameeee: ");
   } else {
     print("user is null");
   }
