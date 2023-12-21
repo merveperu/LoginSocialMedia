@@ -1,16 +1,11 @@
 # my_api_app
 
-A new Flutter project.
+A new Flutter project. Users log in with their Google or twitter account. After they log in, they see their info at top of the page. If they click animations, it generates random infomations, jokes or photos.
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img align="left" src=https://github.com/merveperu/LoginSocialMedia/assets/67706542/11071530-d36b-4dd4-a607-50b7de6b5f11
+ width = "250" height ="550" >
+ 
+ <img align="center" src=https://github.com/merveperu/LoginSocialMedia/assets/67706542/855ee67a-4ee9-46a1-96ae-81b11af32167
+ width = "250" height ="550" >
+ 
