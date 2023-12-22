@@ -1,4 +1,4 @@
-# my_api_app
+
 
 A new Flutter project. Users log in with their Google or twitter account. After they log in, they see their info at top of the page. If they click animations, it generates random infomations, jokes or photos.
 
