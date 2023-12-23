@@ -1,6 +1,6 @@
 
 
-A new Flutter project. Users log in with their Google or twitter account. After they log in, they see their info at top of the page. If they click animations, it generates random infomations, jokes or photos.
+A new Flutter project. Users log in with their Google account or they sign up. After they log in, they see their info at top of the page. If they click animations, it generates random infomations, jokes or photos.
 
 ## Getting Started
 <img align="left" src=https://github.com/merveperu/LoginSocialMedia/assets/67706542/9576579c-a1f4-4c77-92e0-75b58965fe43
