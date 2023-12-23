@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_api_app/signUpPage.dart';
 import 'navigationbar.dart';
 import 'google.dart';
+import 'signUpPage.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 User? _user;
@@ -76,6 +79,7 @@ class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       //If user is not null app goes to mainPage,
       //if user is defined app shows login page which is signInPage
       body: _user != null ? navigationBar() : signInPage(),
@@ -88,20 +92,53 @@ class _FirstPageState extends State<FirstPage> {
     return Stack(
       children: [
         Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("assets/images/bg8.jpeg"),
-                  fit: BoxFit.cover)),
+          decoration: BoxDecoration(
+            //image: DecorationImage(image: AssetImage("assets/images/bg2.jpg"), fit: BoxFit.cover)
+            color: Color(0x79A9C6E9),
+          ),
         ),
         Padding(
-          padding: EdgeInsets.fromLTRB(20.0, 100.0, 0, 0),
-          child: Text(
-            "My App Name",
-            style: GoogleFonts.dancingScript(
-              fontWeight: FontWeight.normal,
-              color: Color.fromARGB(255, 20, 13, 81),
-              fontSize: 50,
+          padding: const EdgeInsets.fromLTRB(20, 70, 20, 20),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 200,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                  child: Text(
+                    "Hello There!",
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(3, 7, 108, 1)),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Center(
+                  child: Text(
+                    "Curabitur at risus risus. Integer placerat mi non velit posuere, vel volutpat urna luctus. Vestibulum ante ipsum primis in faucibus.!",
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w200,
+                        color: Color.fromRGBO(3, 7, 108, 1)),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
             ),
+          ),
+        ),
+        //----image----
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 90),
+          child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/signup3.png"))),
           ),
         ),
         Center(
@@ -110,39 +147,70 @@ class _FirstPageState extends State<FirstPage> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              //----google sign in button----
-              FlutterSocialButton(
-                onTap: () {
-                  signInGoogle();
-                },
-                buttonType:
-                    ButtonType.google, // Button type for different type buttons
-              ),
-              //----twitter sign in button----
-              Center(
-                child: FlutterSocialButton(
-                  onTap: () {
-                    //sign in with twitter
-                  },
-                  buttonType: ButtonType
-                      .twitter, // Button type for different type buttons
+              //----log in button----
+              Container(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Log In',
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.all(20),
+                    side: const BorderSide(
+                      width: 2.0,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                    backgroundColor: Color.fromRGBO(86, 91, 245, 1),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12), // <-- Radius
+                    ),
+                  ),
                 ),
               ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Don't have an account?",
-                    style: myTextStyleBase.size_B,
+              //----sign up button----
+              Container(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 5),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const signUpPage()),
+                    );
+                  },
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(color: Colors.white, fontSize: 15),
                   ),
-                  Text(" "),
-                  Text(
-                    "Sign Up",
-                    style: myTextStyleBase.size_A,
-                  )
-                ],
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.all(20),
+                    side: const BorderSide(
+                      width: 2.0,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                    backgroundColor: Color.fromRGBO(86, 91, 245, 1),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12), // <-- Radius
+                    ),
+                  ),
+                ),
               ),
-              SizedBox(height: 30),
+
+              //----google sign in button----
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+                child: FlutterSocialButton(
+                  onTap: () {
+                    signInGoogle();
+                  },
+                  buttonType: ButtonType
+                      .google, // Button type for different type buttons
+                ),
+              ),
             ],
           ),
         ),

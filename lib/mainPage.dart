@@ -103,7 +103,7 @@ class _main_pageState extends State<main_page> {
               onPressed: () {
                 signOutGoogle();
               },
-              child: Text("log out")),
+              child: const Text("log out")),
         ),
         //---- scroll----
         Padding(
@@ -148,7 +148,7 @@ class _main_pageState extends State<main_page> {
                       },
                     ),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: InkWell(
@@ -162,7 +162,7 @@ class _main_pageState extends State<main_page> {
                               child: Lottie.asset(
                                   "assets/animations/infoanimation3.json"),
                             ),
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment
                                   .center, //Center Row contents horizontally,
                             ),
@@ -171,7 +171,7 @@ class _main_pageState extends State<main_page> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
