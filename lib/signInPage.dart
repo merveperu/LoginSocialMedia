@@ -1,3 +1,5 @@
+//This is the page where users need to sign in with Google or sign up.
+
 import 'package:flutter/material.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -98,11 +100,11 @@ class _FirstPageState extends State<FirstPage> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(20, 70, 20, 20),
+          padding: const EdgeInsets.fromLTRB(20, 80, 20, 20),
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: 200,
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Center(
@@ -134,11 +136,11 @@ class _FirstPageState extends State<FirstPage> {
         ),
         //----image----
         Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 0, 90),
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
           child: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/images/signup3.png"))),
+                    image: AssetImage("assets/images/login11.png"))),
           ),
         ),
         Center(
@@ -149,30 +151,7 @@ class _FirstPageState extends State<FirstPage> {
             children: [
               //----log in button----
               Container(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Log In',
-                    style: TextStyle(color: Colors.white, fontSize: 15),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.all(20),
-                    side: const BorderSide(
-                      width: 2.0,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    backgroundColor: Color.fromRGBO(86, 91, 245, 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12), // <-- Radius
-                    ),
-                  ),
-                ),
-              ),
-              //----sign up button----
-              Container(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 5),
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
@@ -188,10 +167,10 @@ class _FirstPageState extends State<FirstPage> {
                   ),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.all(20),
-                    side: const BorderSide(
-                      width: 2.0,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
+                    // side: const BorderSide(
+                    //   width: 2.0,
+                    //   color: Color.fromARGB(255, 255, 255, 255),
+                    // ),
                     backgroundColor: Color.fromRGBO(86, 91, 245, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12), // <-- Radius
@@ -199,10 +178,18 @@ class _FirstPageState extends State<FirstPage> {
                   ),
                 ),
               ),
+               const Padding(
+                 padding: EdgeInsets.fromLTRB(25, 15, 25, 0),
+                 child: Row(children: <Widget>[
+                  Expanded(child: Divider()),
+                  Text("  or  ",style: TextStyle(color: Color.fromARGB(85, 5, 1, 245)),),
+                   Expanded(child: Divider()),
+                 ]),
+               ),
 
               //----google sign in button----
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: FlutterSocialButton(
                   onTap: () {
                     signInGoogle();

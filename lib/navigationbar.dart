@@ -1,3 +1,5 @@
+//This is the page which has the navigator design.
+
 import 'package:flutter/material.dart';
 import 'signInPage.dart';
 import 'mainPage.dart';

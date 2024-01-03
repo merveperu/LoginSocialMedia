@@ -1,3 +1,5 @@
+//This is the first page after users login.
+
 import 'package:flutter/material.dart';
 import 'package:my_api_app/random_jokes.dart';
 import 'signInPage.dart';

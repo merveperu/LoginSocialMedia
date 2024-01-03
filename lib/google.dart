@@ -1,3 +1,5 @@
+//Google authentication page
+
 import 'package:firebase_auth/firebase_auth.dart';
 
 //----------google----------
@@ -39,7 +41,8 @@ void getInfo() {
         " photo url: " +
         photoUrl.toString() +
         " uid: " +
-        uid.toString()+"nameeee: ");
+        uid.toString() +
+        "nameeee: ");
   } else {
     print("user is null");
   }
